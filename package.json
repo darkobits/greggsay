@@ -1,23 +1,11 @@
 {
-  "name": "yosay",
+  "name": "greggsay",
   "version": "1.2.0",
-  "description": "Tell Yeoman what to say",
+  "description": "Tell Gregg what to say.",
+  "private": true,
   "license": "BSD-2-Clause",
-  "keywords": [
-    "cli-app",
-    "cli",
-    "bin",
-    "yeoman",
-    "yo",
-    "cowsay",
-    "say",
-    "box",
-    "message",
-    "ansi"
-  ],
-  "homepage": "yeoman.io",
-  "author": "Yeoman",
-  "repository": "yeoman/yosay",
+  "author": "darkobits",
+  "repository": "darkobots/greggsay",
   "bin": "cli.js",
   "files": [
     "index.js",
@@ -25,9 +13,6 @@
   ],
   "engines": {
     "node": ">=0.10.0"
-  },
-  "scripts": {
-    "test": "xo && mocha"
   },
   "dependencies": {
     "ansi-regex": "^2.0.0",
@@ -40,12 +25,5 @@
     "strip-ansi": "^3.0.0",
     "taketalk": "^1.0.0",
     "wrap-ansi": "^2.0.0"
-  },
-  "devDependencies": {
-    "mocha": "*",
-    "xo": "*"
-  },
-  "xo": {
-    "space": true
   }
 }

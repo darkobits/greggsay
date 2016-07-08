@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 'use strict';
 var pkg = require('./package.json');
-var yosay = require('./');
+var greggsay = require('./');
 
 require('taketalk')({
   init: function (input, options) {
-    console.log(yosay(input, options));
+    console.log(greggsay(input, options));
   },
   help: function () {
     console.log([
@@ -13,13 +13,13 @@ require('taketalk')({
       '  ' + pkg.description,
       '',
       '  Usage',
-      '    yosay <string>',
-      '    yosay <string> --maxLength 8',
-      '    echo <string> | yosay',
+      '    greggsay <string>',
+      '    greggsay <string> --maxLength 8',
+      '    echo <string> | greggsay',
       '',
       '  Example',
-      '    yosay "Sindre is a horse"',
-      yosay('Sindre is a horse')
+      '    greggsay "I like turtles."',
+      greggsay('I like turtles.')
     ].join('\n'));
   },
   version: pkg.version

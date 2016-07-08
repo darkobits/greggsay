@@ -1,72 +1,81 @@
-# yosay [![Build Status](https://travis-ci.org/yeoman/yosay.svg?branch=master)](https://travis-ci.org/yeoman/yosay)
+# greggsay
 
-> Tell Yeoman what to say
+> Tell Gregg what to say.
 
-Like [cowsay](http://en.wikipedia.org/wiki/Cowsay), but less cow.
+Like [yosay](https://github.com/yeoman/yosay), but less yo.
 
-![](screenshot.png)
+![](https://cloud.githubusercontent.com/assets/441546/16679695/632fef94-449e-11e6-8956-1c5d9fd943df.png)
 
 
 ## Install
 
 ```
-$ npm install --save yosay
+$ npm install --save https://github.com/darkobits/greggsay.git
 ```
 
 
 ## Usage
 
 ```js
-const yosay = require('yosay');
+const greggsay = require('greggsay');
 
-console.log(yosay('Hello, and welcome to my fantastic generator full of whimsy and bubble gum!'));
+console.log(greggsay('What does the Gregg say? Squee squee!'));
 
 /*
-     _-----_     ╭──────────────────────────╮
-    |       |    │ Hello, and welcome to my │
-    |--(o)--|    │ fantastic generator full │
-   `---------´   │   of whimsy and bubble   │
-    ( _´U`_ )    │           gum!           │
-    /___A___\   /╰──────────────────────────╯
-     |  ~  |
-   __'.___.'__
- ´   `  |° ´ Y `
+    ____                       ____
+   /    \  ___-----------___  /    \
+  /     /--                 --\     \    ╭──────────────────────────╮
+ /     /                       \     \   │ What does the Gregg say? │
+/     /  /---\           /---\  \     \ /│       Squee squee!       │
+\____/   | C |           | C |   \____/  ╰──────────────────────────╯
+     |   \---/  _______  \---/   |
+     |         /  ___  \         |
+     |         |  \ /  |         |
+     |_        | \_|_/ |        _|
+    /  \        \_____/        /  \
+    \   \--___           ___--/   /
+     \   \    -----------    /   /
+      \__/                   \__/
  */
 ```
 
-*You can style your text with [chalk](https://github.com/sindresorhus/chalk) before passing it to `yosay`.*
+*You can style your text with [chalk](https://github.com/sindresorhus/chalk) before passing it to `greggsay`.*
 
 
 ## CLI
 
 ```
-$ npm install --global yosay
+$ npm install --global https://github.com/darkobits/greggsay.git
 ```
 
 ```
-$ yosay --help
+$ greggsay --help
 
   Usage
-    yosay <string>
-    yosay <string> --maxLength 8
-    echo <string> | yosay
+    greggsay <string>
+    greggsay <string> --maxLength 8
+    echo <string> | greggsay
 
   Example
-    yosay 'Sindre is a horse'
+    greggsay 'My spoon is too big!'
 
-     _-----_
-    |       |
-    |--(o)--|    ╭──────────────────────────╮
-   `---------´   │     Sindre is a horse    │
-    ( _´U`_ )    ╰──────────────────────────╯
-    /___A___\   /
-     |  ~  |
-   __'.___.'__
- ´   `  |° ´ Y `
+        ____                       ____
+       /    \  ___-----------___  /    \
+      /     /--                 --\     \
+     /     /                       \     \   ╭────────────────────────────────╮
+    /     /  /---\           /---\  \     \ /│      My spoon is too big!      │
+    \____/   | C |           | C |   \____/  ╰────────────────────────────────╯
+         |   \---/  _______  \---/   |
+         |         /  ___  \         |
+         |         |  \ /  |         |
+         |_        | \_|_/ |        _|
+        /  \        \_____/        /  \
+        \   \--___           ___--/   /
+         \   \    -----------    /   /
+          \__/                   \__/
 ```
 
 
 ## License
 
 [BSD license](http://opensource.org/licenses/bsd-license.php)
-Copyright (c) Google

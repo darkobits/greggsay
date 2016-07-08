@@ -11,42 +11,49 @@ var cliBoxes = require('cli-boxes');
 
 var border = cliBoxes.round;
 var topOffset = 4;
-var leftOffset = 17;
-var defaultGreeting =
-  '\n     _-----_     ' +
-  '\n    |       |    ' +
-  '\n    |' + chalk.red('--(o)--') + '|    ' +
-  '\n   `---------´   ' +
-  '\n    ' + chalk.yellow('(') + ' _' + chalk.yellow('´U`') + '_ ' + chalk.yellow(')') + '    ' +
-  '\n    /___A___\\   /' +
-  '\n     ' + chalk.yellow('|  ~  |') + '     ' +
-  '\n   __' + chalk.yellow('\'.___.\'') + '__   ' +
-  '\n ´   ' + chalk.red('`  |') + '° ' + chalk.red('´ Y') + ' ` ';
+var leftOffset = 42;
+
+var defaultGreeting = [
+  chalk.bold.yellow('     ____                       ____      '),
+  chalk.bold.yellow('    /    \\  ___-----------___  /    \\     '),
+  chalk.bold.yellow('   /     /--                 --\\     \\    '),
+  chalk.bold.yellow('  /     /                       \\     \\   '),
+  chalk.bold.yellow(' /     /') + '  /---\\           /---\\' + chalk.bold.yellow('  \\     \\') + ' /',
+  chalk.bold.yellow(' \\____/') + '   |' + chalk.gray(' C ') + '|           |' + chalk.gray(' C ') + '|   ' + chalk.bold.yellow('\\____/  '),
+  chalk.bold.yellow('      |') + '   \\---/' + chalk.bold.magenta('  _______  ') + '\\---/' + chalk.bold.yellow('   |       '),
+  chalk.bold.yellow('      |') + chalk.bold.magenta('         / ') + chalk.bold.gray(' ___  ') + chalk.bold.magenta('\\') + chalk.bold.yellow('         |       '),
+  chalk.bold.yellow('      |') + chalk.bold.magenta('         |') + chalk.bold.gray('  \\ /  ') + chalk.bold.magenta('|') + chalk.bold.yellow('         |       '),
+  chalk.bold.yellow('      |_') + chalk.bold.magenta('        | \\_') + chalk.bold.gray('|') + chalk.bold.magenta('_/ |') + chalk.bold.yellow('        _|       '),
+  chalk.bold.yellow('     /  \\') + chalk.bold.magenta('        \\_____/') + chalk.bold.yellow('        /  \\      '),
+  chalk.bold.yellow('     \\   \\--___           ___--/   /      '),
+  chalk.bold.yellow('      \\   \\    -----------    /   /       '),
+  chalk.bold.yellow('       \\__/                   \\__/        ')
+].join('\n');
 
 // A total line with 45 characters consists of:
 // 28 chars for the top frame of the speech bubble → `╭──────────────────────────╮`
 // 17 chars for the yeoman character »column«      → `    /___A___\   /`
-var TOTAL_CHARACTERS_PER_LINE = 45;
+var TOTAL_CHARACTERS_PER_LINE = 28 + leftOffset;
 
 // The speech bubble will overflow the Yeoman character if the message is too long.
 var MAX_MESSAGE_LINES_BEFORE_OVERFLOW = 7;
 
 module.exports = function (message, options) {
-  message = (message || 'Welcome to Yeoman, ladies and gentlemen!').trim();
+  message = (message || 'What does the Gregg say?\n' + chalk.magenta('Squee squee!')).trim();
   options = options || {};
 
   /*
    * What you're about to see may confuse you. And rightfully so. Here's an
    * explanation.
    *
-   * When yosay is given a string, we create a duplicate with the ansi styling
-   * sucked out. This way, the true length of the string is read by `pad` and
-   * `wrap`, so they can correctly do their job without getting tripped up by
-   * the "invisible" ansi. Along with the duplicated, non-ansi string, we store
-   * the character position of where the ansi was, so that when we go back over
-   * each line that will be printed out in the message box, we check the
-   * character position to see if it needs any styling, then re-insert it if
-   * necessary.
+   * When greggsay is given a string, we create a duplicate with the ansi
+   * styling sucked out. This way, the true length of the string is read by
+   * `pad` and `wrap`, so they can correctly do their job without getting
+   * tripped up by the "invisible" ansi. Along with the duplicated, non-ansi
+   * string, we store the character position of where the ansi was, so that when
+   * we go back over each line that will be printed out in the message box, we
+   * check the character position to see if it needs any styling, then re-insert
+   * it if necessary.
    *
    * Better implementations welcome :)
    */
